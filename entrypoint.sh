@@ -74,6 +74,7 @@ install_terraform() {
 run_accurics() {
   local params=$1
   local plan_args=$2
+  
   touch config
   terrascan version
   
@@ -99,7 +100,6 @@ run_accurics() {
   
   # Run accurics plan
   accurics $INPUT_RUN_MODE $params $plan_args $pipeline_mode
-  
   ACCURICS_PLAN_ERR=$?
 }
 
